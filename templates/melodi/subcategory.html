@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<!-- Mirrored from preview.colorlib.com/theme/solmusic/category.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 21 Oct 2020 09:07:50 GMT -->
+
+<head>
+	<title>SolMusic | HTML Template</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="SolMusic HTML Template" />
+	<meta name="keywords" content="music, html" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/static/melodi/img/logo/favicon.ico" />
+
+	<!-- Google font -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&amp;display=swap"
+		rel="stylesheet" />
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/static/melodi/css/bootstrap.min1.css" />
+	<link rel="stylesheet" href="/static/melodi/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/static/melodi/css/owl.carousel.min.css" />
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="/static/melodi/css/style1.css" />
+</head>
+
+<body>
+	<!-- Category section -->
+	<section class="category-section spad">
+		<div class="container-fluid">
+			<div class="section-title">
+				<h2>Live Concert Playlist</h2>
+			</div>
+			<div class="container">
+				<div class="category-links">
+					<a href="\mainpageinterface">Home</a>
+					<a href="\categorypage">Category</a>
+					<a href="#" class="active">Subcategory</a>
+					<a href="\playlistpage">Playlist</a>
+				</div>
+			</div>
+			<div class="category-items">
+				<div class="row">
+					{% for row in rows %}
+					<div class="col-md-4">
+						<div class="category-item">
+							<img src="/static/{{row.4}}" alt="" />
+							<div class="ci-text">
+								<h4>{{row.2}}</h4>
+								<p>{{row.3}}</p>
+							</div>
+							<a href="/artistpage?scid={{ row }}" class="ci-link"><i class="fa fa-play"></i></a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Category section end -->
+
+	
+	<!--====== Javascripts & Jquery ======-->
+	<script src="/static/melodi/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/melodi/js/bootstrap.min.js"></script>
+	<script src="/static/melodi/js/jquery.slicknav.min.js"></script>
+	<script src="/static/melodi/js/owl.carousel.min.js"></script>
+	<script src="/static/melodi/js/mixitup.min.js"></script>
+	<script src="/static/melodi/js/main.js"></script>
+
+	<!-- Audio Player and Initialization -->
+	<script src="/static/melodi/js/jquery.jplayer.min.js"></script>
+	<script src="/static/melodi/js/jplayerInit.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("config", "UA-23581568-13");
+	</script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/solmusic/category.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 21 Oct 2020 09:08:13 GMT -->
+
+</html>

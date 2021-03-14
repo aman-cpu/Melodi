@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<!-- Mirrored from preview.colorlib.com/theme/solmusic/category.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 21 Oct 2020 09:07:50 GMT -->
+
+<head>
+	<title>SolMusic | HTML Template</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="SolMusic HTML Template" />
+	<meta name="keywords" content="music, html" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/static/melodi/img/logo/favicon.ico" />
+
+	<!-- Google font -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&amp;display=swap"
+		rel="stylesheet" />
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/static/melodi/css/bootstrap.min1.css" />
+	<link rel="stylesheet" href="/static/melodi/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/static/melodi/css/owl.carousel.min.css" />
+
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="/static/melodi/css/style1.css" />
+</head>
+
+<body>
+
+	<!-- Category section -->
+	<section class="category-section spad">
+		<div class="container-fluid">
+			<div class="section-title">
+				<h2>Live Concert Playlist</h2>
+			</div>
+			<div class="container">
+				<div class="category-links">
+					<a href="\mainpageinterface">Home</a>
+					<a href="#" class="active">Category</a>
+					<a href="\searchsong">Search</a>
+					<a href="\playlistpage">Playlist</a>
+				</div>
+			</div>
+			<div class="category-items">
+				<div class="row">
+					{% for row in rows %}
+					<div class="col-md-4"><br>
+						<div class="category-item">
+							<img src="/static/{{row.3}}" alt="" />
+							<div class="ci-text">
+								<h4>{{row.1}}</h4>
+								<p>{{row.2}}</p>
+							</div>
+							<a href="/subcategorypage?cid={{row.0}}" class="ci-link"><i class="fa fa-play"></i></a>
+						</div>
+
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Category section end -->
+
+	<!-- Songs section  -->
+	<section class="songs-section">
+		<div class="container">
+			<!-- song -->
+			{% for row in srows %}
+			<div class="song-item">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="song-info-box">
+							<img src="/static/{{row.10}}" alt="" />
+							<div class="song-info">
+								<h4>{{row.2}}</h4>
+								<p>{{row.9}}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="single_player_container">
+							<div class="single_player">
+								<div class="jp-jplayer jplayer" data-ancestor=".jp_container_{{row.0}}"
+									data-url="/static/{{row.4}}"></div>
+								<div class="jp-audio jp_container_{{row.0}}" role="application"
+									aria-label="media player">
+									<div class="jp-gui jp-interface">
+										<!-- Player Controls -->
+										<div class="player_controls_box">
+											<button class="jp-prev player_button" tabindex="0"></button>
+											<button class="jp-play player_button" tabindex="0"></button>
+											<button class="jp-next player_button" tabindex="0"></button>
+											<button class="jp-stop player_button" tabindex="0"></button>
+										</div>
+										<!-- Progress Bar -->
+										<div class="player_bars">
+											<div class="jp-progress full">
+												<div class="jp-seek-bar">
+													<div>
+														<div class="jp-play-bar">
+															<div class="jp-current-time" role="timer" aria-label="time">
+																0:00
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="jp-duration ml-auto" role="timer" aria-label="duration">
+												00:00
+											</div>
+										</div>
+									</div>
+									<div class="jp-no-solution">
+										<span>Update Required</span>
+										To play the media you will need to either update your
+										browser to a recent version or update your
+										<a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2">
+						<div class="songs-links">
+							<a href="#"><img src="/static/melodi/img/icons/p-1.png" alt="" /></a>
+							<a href="#"><img src="/static/melodi/img/icons/p-2.png" alt="" /></a>
+							<a href="#"><img src="/static/melodi/img/icons/p-3.png" alt="" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			<!-- song -->
+
+			<div class="site-pagination pt-5 mt-5">
+				<a href="#" class="active">01.</a>
+				<a href="#">02.</a>
+				<a href="#">03.</a>
+				<a href="#">04.</a>
+			</div>
+		</div>
+	</section>
+	<!-- Songs section end -->
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="/static/melodi/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/melodi/js/bootstrap.min.js"></script>
+	<script src="/static/melodi/js/jquery.slicknav.min.js"></script>
+	<script src="/static/melodi/js/owl.carousel.min.js"></script>
+	<script src="/static/melodi/js/mixitup.min.js"></script>
+	<script src="/static/melodi/js/main.js"></script>
+
+	<!-- Audio Player and Initialization -->
+	<script src="/static/melodi/js/jquery.jplayer.min.js"></script>
+	<script src="/static/melodi/js/jplayerInit.js"></script>
+
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("config", "UA-23581568-13");
+	</script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/solmusic/category.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 21 Oct 2020 09:08:13 GMT -->
+
+</html>
+
+
+
+
+

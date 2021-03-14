@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from preview.colorlib.com/theme/solmusic/playlist.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 21 Oct 2020 09:08:13 GMT -->
+<head>
+	<title>SolMusic | HTML Template</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="SolMusic HTML Template">
+	<meta name="keywords" content="music, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/static/melodi/img/logo/favicon.ico">
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&amp;display=swap" rel="stylesheet">
+ 
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/static/melodi/css/bootstrap.min1.css"/>
+	<link rel="stylesheet" href="/static/melodi/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="/static/melodi/css/owl.carousel.min.css"/>
+	
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="/static/melodi/css/style1.css"/>
+</head>
+<body>
+
+	<!-- Playlist section -->
+	<section class="playlist-section spad">
+		<div class="container-fluid">
+			<div class="section-title">
+				<h2>Playlists</h2>
+			</div>
+			<div class="container">
+				<ul class="playlist-filter controls">
+					{% for row in rows %}
+						<li class="control" data-filter=".song{{row.0}}">{{row.1}}</li>
+					{% endfor %}
+					<li class="control" data-filter="all">All Playlist</li>
+				</ul>
+			</div>                                              
+			<div class="clearfix"></div>
+			<div class="row playlist-area">
+				{% for row in srows %}
+				<div class="mix col-lg-3 col-md-4 col-sm-6 song{{row.1}}">
+					<div class="playlist-item">
+						<a href="/artistpage?scid={{ row }}"><img src="/static/{{row.4}}" alt=""></a>
+						<h5>{{row.2}}</h5>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- Playlist section end -->
+	
+	<!--====== Javascripts & Jquery ======-->
+	<script src="/static/melodi/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/melodi/js/bootstrap.min.js"></script>
+	<script src="/static/melodi/js/jquery.slicknav.min.js"></script>
+	<script src="/static/melodi/js/owl.carousel.min.js"></script>
+	<script src="/static/melodi/js/mixitup.min.js"></script>
+	<script src="/static/melodi/js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+	</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/solmusic/playlist.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 21 Oct 2020 09:08:25 GMT -->
+</html>

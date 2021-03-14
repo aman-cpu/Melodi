@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#userList").DataTable();
+        });
+    </script>
+    <style>
+        .table-responsive {
+            display: table;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+    <title>Sub Categories</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="userList" class="table table-bordered center" border="1">
+                    <div class="card-header">
+                        <figcaption>
+                            <h2 class="center" style="font-family: 'Patrick Hand', cursive">
+                                View SubCategories
+                            </h2>
+                        </figcaption>
+                    </div>
+                    <br />
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Sno</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Category Id With Name</th>
+                            <th scope="col">Icon</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for row in rows%}
+                        <!-- {{row.0}},{{row.1}},{{row.2}},{{row.3}}<br> -->
+                        <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td>{{row.2}}</td>
+                            <td>{{row.3}}</td>
+                            <td>{{row.1}} ({{row.5}})</td>
+                            <td>
+                                <img src="/static/{{row.4}}" alt="" width="60" height="60" />
+                            </td>
+                            <td>
+                                <button class="btn btn-primary">
+                                    <a style="color: white; text-decoration: none"
+                                        href="/subcategorydisplaybyid?scid={{row.0}}">Edit/Delete</a>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

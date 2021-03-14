@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#userList").DataTable();
+    });
+  </script>
+  <style>
+    .table-responsive {
+      display: table;
+    }
+
+    .center {
+      text-align: center;
+    }
+  </style>
+  <title>Songs</title>
+</head>
+
+<body>
+  {% comment %} <div class="container"> {% endcomment %}
+    <div class="card-body">
+      <div class="table-responsive">
+        <table id="userList" class="table table-striped center" border="1">
+          <div class="card-header">
+            <figcaption>
+              <h2 class="center" style="font-family: 'Patrick Hand', cursive">
+                View All Songs
+              </h2>
+            </figcaption>
+          </div>
+          <br />
+          <thead>
+            <tr>
+              <th scope="col">Sno</th>
+              <!-- <th scope="col">Subcategory</th> -->
+              <th scope="col">Title</th>
+              <th scope="col">Release Year</th>
+              <th scope="col">Lyrics</th>
+              <th scope="col">Status</th>
+              <th scope="col">Type</th>
+              <th scope="col">Singers</th>
+              <th scope="col">Directors</th>
+              <th scope="col">Music Company</th>
+              <th scope="col">Poster</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for row in rows%}
+            <!-- {{row.0}},{{row.1}},{{row.2}},{{row.3}}<br> -->
+            <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <!-- <th scope="row">{{row.11}}</th> -->
+              <td>{{row.2}}</td>
+              <td>{{row.3}}</td>
+              <td>{{row.4}}</td>
+              <td>{{row.5}}</td>
+              <td>{{row.6}}</td>
+              <td>{{row.7}}</td>
+              <td>{{row.8}}</td>
+              <td>{{row.9}}</td>
+              <td>
+                <img src="/static/{{row.10}}" alt="" width="60" height="60" />
+              </td>
+              <td>
+                <button class="btn btn-primary">
+                  <a style="color: white; text-decoration: none"
+                    href="/songdisplaybyid?songid={{row.0}}">Edit/Delete</a>
+                </button>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% comment %} </div> {% endcomment %}
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+<script src="/static/js/project.js"></script>
+<style>
+    .bgc {
+      background-color: #ffcccc;
+    }
+</style>
+<html lang="en">
+
+<head>
+    <title>Subcategory Page</title>
+</head>
+
+<body class="bgc">
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header">
+                                    <h3 class="text-center font-weight-light my-4">
+                                        Subcategory Register
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/subcategorysubmit" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="inputEmailAddress">Category</label>
+                                            <select name="cid" id="cid" class="form-control" required>
+                                                <option value="">-Select Category-</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="inputEmailAddress">Subcategory Name</label>
+                                            <input class="form-control py-2" id="inputEmailAddress" type="text"
+                                                placeholder="Enter Name" name="scname" required/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="inputEmailAddress">Subcategory
+                                                Description</label>
+                                            <input class="form-control py-2" id="inputEmailAddress" type="text"
+                                                placeholder="Enter description" name="scdes" required/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="inputEmailAddress">Subcategory
+                                                Icon</label><br />
+                                            <input id="inputEmailAddress" type="file" name="scicon" required/>
+                                        </div>
+                                        <div class="form-group" style="text-align: center">
+                                            <input type="submit" class="btn btn-primary btn-sm mr-2" />
+                                            <input type="reset" class="btn btn-dark btn-sm" />
+                                        </div>
+                                        <div class="form-group" style="text-align: center">
+                                            <b>
+                                                <p>{{msg}}</p>
+                                            </b>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
