@@ -123,5 +123,5 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(
     Path.joinpath(BASE_DIR,'asset'),
-    # Path.joinpath(BASE_DIR,'static'),
+    Path.joinpath(BASE_DIR,'static'),
 )
