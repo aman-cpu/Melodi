@@ -6,7 +6,7 @@ from django.http import JsonResponse
 
 def ActionMainPage(request):
     try:
-        dbe = mysql.connect(host="localhost", port=3306,
+        dbe = mysql.connect(host="melodimusicapp.herokuapp.com", port=3306,
                             user="root", password='', db="music")
         cmd = dbe.cursor()
         q = 'select * from category'
