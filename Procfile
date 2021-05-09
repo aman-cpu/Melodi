@@ -1,1 +1,1 @@
-web: gunicorn MUSICVIDEO.wsgi --log-file -
+web: gunicorn musicvideo.wsgi --log-file -
