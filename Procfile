@@ -1,1 +1,1 @@
-web: gunicorn musicvideo.wsgi --log-file -
+web: gunicorn --bind 0.0.0.0:$PORT musicvideo.wsgi
