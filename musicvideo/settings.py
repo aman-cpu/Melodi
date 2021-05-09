@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'oa-7so)1-yg@sox!n!nac_(rmz)hcb17ziws7mu*^!%ve1v7bn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','melodimusicapp.herokuapp.com']
+ALLOWED_HOSTS = ['melodimusicapp.herokuapp.com']
 
 
 # Application definition
