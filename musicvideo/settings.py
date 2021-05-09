@@ -121,9 +121,8 @@ DISABLE_COLLECTSTATIC=1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(
     Path.joinpath(BASE_DIR,'asset'),
-    Path.joinpath(BASE_DIR,'static'),
 )
