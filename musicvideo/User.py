@@ -6,8 +6,8 @@ from django.http import JsonResponse
 
 def ActionMainPage(request):
     try:
-        dbe = mysql.connect(host="127.0.0.1", port=3306,
-                            user="root", password='', db="music")
+        dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
+                            user="ijcjrzlgenemkz", password='', db="d1imieiq5pkn40")
         cmd = dbe.cursor()
         q = 'select * from category'
         cmd.execute(q)
