@@ -6,8 +6,8 @@ from django.http import JsonResponse
 
 def ActionMainPage(request):
     try:
-        dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+        dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
         cmd = dbe.cursor()
         q = 'select * from category'
         cmd.execute(q)
@@ -20,8 +20,8 @@ def ActionMainPage(request):
 
 def FetchAllRecord(q):
     try:
-        dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+        dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
         cmd = dbe.cursor()
         cmd.execute(q)
         rows = cmd.fetchall()
