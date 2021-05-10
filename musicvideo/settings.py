@@ -72,10 +72,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'musicvideo.wsgi.application'
+import django_heroku
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
-
+django_heroku.settings(locals())
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
