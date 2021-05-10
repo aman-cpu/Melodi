@@ -27,7 +27,7 @@ SECRET_KEY = 'oa-7so)1-yg@sox!n!nac_(rmz)hcb17ziws7mu*^!%ve1v7bn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','melodimusicapp.herokuapp.com']
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
@@ -122,7 +122,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, "static"))
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(
     Path.joinpath(BASE_DIR,'asset'),
