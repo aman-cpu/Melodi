@@ -16,8 +16,8 @@ def Actioncategorysubmit(request):
     cdes = request.POST['cdes']
     file = request.FILES['cicon']
     try:
-        dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+        dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
         cmd = dbe.cursor()
         q = "INSERT INTO `category` (`categoryname`, `categorydescription`, `categoryicon`) VALUES ('{}', '{}', '{}')".format(
             cname, cdes, file.name)
@@ -39,8 +39,8 @@ def ActioncategoryDisplayAll(request):
     try:
         rec = request.session['ADMIN_SES']
         try:
-            dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+            dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
             cmd = dbe.cursor()
             q = 'select * from category'
             cmd.execute(q)
@@ -57,8 +57,8 @@ def ActioncategoryDisplayAll(request):
 def ActioncategoryDisplaybyid(request):
     try:
         cid = request.GET['cid']
-        dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+        dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
         cmd = dbe.cursor()
         q = 'select * from category where categoryid={}'.format(cid)
         cmd.execute(q)
@@ -77,8 +77,8 @@ def ActionCategoryEditDeleteSubmit(request):
     btn = request.POST['btn']
     try:
         if(btn == "Edit"):
-            dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+            dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
             cmd = dbe.cursor()
             q = "update category set categoryname='{}',categorydescription='{}' where categoryid='{}'".format(
                 cname, cdes, cid)
@@ -87,8 +87,8 @@ def ActionCategoryEditDeleteSubmit(request):
             dbe.close()
             return ActioncategoryDisplayAll(request)
         elif(btn == "Delete"):
-            dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+            dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
             cmd = dbe.cursor()
             q = "delete from category where categoryid='{}'".format(cid)
             cmd.execute(q)
@@ -105,8 +105,8 @@ def ActionEditCategoryPicture(request):
     file = request.FILES['cicon']
 
     try:
-        dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+        dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
         cmd = dbe.cursor()
         q = "update category set categoryicon='{}' where categoryid={}".format(
             file.name, cid)
@@ -125,8 +125,8 @@ def ActionEditCategoryPicture(request):
 
 def ActionDisplayJSON(request):
     try:
-        dbe = mysql.connect(host="ec2-34-200-94-86.compute-1.amazonaws.com", port=5432,
-                            user="ijcjrzlgenemkz", password='864dd0f35ea5241444ae1f9023989175a1adb30d3ffd8f170926b11e088aefb8', db="d1imieiq5pkn40")
+        dbe = mysql.connect(host="localhost", port=3306,
+                            user="root", password='', db="music")
         cmd = dbe.cursor()
         q = "select * from category"
         cmd.execute(q)
