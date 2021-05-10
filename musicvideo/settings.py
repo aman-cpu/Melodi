@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -118,6 +120,7 @@ USE_TZ = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
@@ -125,3 +128,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=(
     Path.joinpath(BASE_DIR,'asset'),
 )
+django_heroku.settings(locals())
