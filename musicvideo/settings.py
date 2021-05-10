@@ -73,6 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'musicvideo.wsgi.application'
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
